@@ -57,6 +57,14 @@ const total = document.querySelector('.total');
 const submitButton = document.getElementById('submitButton');
 const printButton = document.getElementById('printButton');
 
+kickOffQuantity.defaultValue = '1';
+procurementQuantity.defaultValue = '1';
+siteVisitQuantity.defaultValue = '1';
+materialQuantity.defaultValue = '1';
+updateQuantity.defaultValue = '1';
+qualityQuantity.defaultValue = '1';
+closeoutQuantity.defaultValue = '1';
+
 submitButton.addEventListener('click', function () {
   kickOffTotal.textContent = +kickOffHours * +kickOffQuantity.value;
   procurementTotal.textContent = +procurementHours * +procurementQuantity.value;
