@@ -118,3 +118,12 @@ button:active {
 .row-background {
   background-color: var(--beau-blue);
 }
+
+.note {
+  text-align: center;
+  font-style: oblique;
+  font-weight: 600;
+  color: goldenrod;
+  font-size: 1.1em;
+  margin-top: 1em;
+}
