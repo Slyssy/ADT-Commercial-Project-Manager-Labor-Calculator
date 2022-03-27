@@ -114,7 +114,8 @@ button:active {
   transform: translateY(4px);
 }
 .required {
-  background-color: goldenrod;
+  background-color: #ffc65c;
+  color: var(--white);
 }
 
 .row-background {
@@ -125,7 +126,7 @@ button:active {
   text-align: center;
   font-style: oblique;
   font-weight: 600;
-  color: goldenrod;
+  color: #ffc65c;
   font-size: 1.1em;
   margin-top: 1em;
 }
