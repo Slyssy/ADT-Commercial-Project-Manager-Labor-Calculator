@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PM Labor Calculator</title>
-    <!-- CSS only -->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script>  
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="container">
       <img src="images/logo.png" alt="logo" class="logo" />
       <h2 class="title">Project Management Labor Calculator</h2>
-      <table id="tabel1">
+      <table id="table1">
         <tr>
           <th class="col-1">Project Manager Activity Description</th>
           <th class="col-2">Hours</th>
@@ -125,7 +125,8 @@
         value of 1 should be entered in these cells.</p>
       </div>
       <button id="submitButton">Calculate Totals</button>
-      <p id="info"></p>
+      <button id="printButton">Save PDF</button>
+      
     </div>
 
     <script src="script.js"></script>

@@ -54,9 +54,10 @@ const closeoutQuantity = document.querySelector('.closeout-qty');
 const closeoutTotal = document.querySelector('.closeout-total');
 const total = document.querySelector('.total');
 
-const button = document.getElementById('submitButton');
+const submitButton = document.getElementById('submitButton');
+const printButton = document.getElementById('printButton');
 
-button.addEventListener('click', function () {
+submitButton.addEventListener('click', function () {
   kickOffTotal.textContent = +kickOffHours * +kickOffQuantity.value;
   procurementTotal.textContent = +procurementHours * +procurementQuantity.value;
   siteVisitTotal.textContent = +siteVisitHours * +siteVisitQuantity.value;
@@ -86,4 +87,59 @@ button.addEventListener('click', function () {
     +certifiedTotal.textContent +
     +closeoutTotal.textContent
   } Hours`;
+});
+
+function createPDF() {
+  var doc = new jsPDF('p', 'pt', 'letter');
+  var htmlstring = '';
+  var tempVarToCheckPageHeight = 0;
+  var pageHeight = 0;
+  pageHeight = doc.internal.pageSize.height;
+  specialElementHandlers = {
+    // element with id of "bypass" - jQuery style selector
+    '#bypassme': function (element, renderer) {
+      // true = "handled elsewhere, bypass text extraction"
+      return true;
+    },
+  };
+  margins = {
+    top: 150,
+    bottom: 60,
+    left: 40,
+    right: 40,
+    width: 600,
+  };
+  var y = 20;
+  doc.setLineWidth(2);
+  doc.text(200, (y = y + 30), 'PM Labor Calculator');
+  doc.autoTable({
+    html: '#table1',
+    startY: 70,
+    theme: 'grid',
+    columnStyles: {
+      0: {
+        cellWidth: 360,
+      },
+      1: {
+        cellWidth: 45,
+        halign: 'center',
+      },
+      2: {
+        cellWidth: 45,
+        halign: 'center',
+      },
+      3: {
+        cellWidth: 45,
+        halign: 'center',
+      },
+    },
+    styles: {
+      minCellHeight: 40,
+    },
+  });
+  doc.save('PM_Labor_Calculator.pdf');
+}
+
+printButton.addEventListener('click', function () {
+  createPDF();
 });

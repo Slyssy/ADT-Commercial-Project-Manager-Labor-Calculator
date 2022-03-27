@@ -31,11 +31,13 @@ body {
 .description {
   font-weight: 550;
 }
-table {
-  width: 100%;
-}
+
 .logo {
   width: 30%;
+}
+
+table {
+  width: 100%;
 }
 
 .col-1 {
