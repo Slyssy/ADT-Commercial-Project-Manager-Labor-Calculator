@@ -21,6 +21,16 @@ body {
   margin: auto;
 }
 
+.title {
+  color: darkslategrey;
+  font-size: 2em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.description {
+  font-weight: 550;
+}
 table {
   width: 100%;
 }
@@ -72,6 +82,8 @@ select {
   border: 1px solid var(--alice-blue);
   border-radius: 4px;
   box-sizing: border-box;
+  text-align: center;
+  font-size: 1.1em;
 }
 
 button {
