@@ -61,7 +61,7 @@ table {
 th {
   background-color: var(--french-blue);
   color: var(--white);
-  padding: 1.1em;
+  padding: 1em 1.1em;
   font-size: 20px;
   border-radius: 8px;
 }
@@ -72,7 +72,7 @@ tr:hover {
   background-color: lightgoldenrodyellow;
 }
 td {
-  padding: 1em;
+  padding: 0.5em 1em;
   font-size: 18px;
 }
 input[type='text'],
