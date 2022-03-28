@@ -88,9 +88,18 @@ select {
   font-size: 1.1em;
 }
 
+#buttons {
+  width: 30%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  /* gap: 2em; */
+}
+
 button {
-  margin: 3em auto;
-  display: block;
+  margin-top: 1rem;
+  /* display: block; */
+  width: 20%;
   background-color: var(--green-blue-crayola);
   color: var(--white);
   padding: 1em;
@@ -113,6 +122,14 @@ button:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+
+#printButton:disabled {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
 .required {
   background-color: #ffc65c;
   color: var(--white);

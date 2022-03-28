@@ -57,6 +57,8 @@ const total = document.querySelector('.total');
 const submitButton = document.getElementById('submitButton');
 const printButton = document.getElementById('printButton');
 
+printButton.disabled = true;
+
 kickOffQuantity.defaultValue = '1';
 procurementQuantity.defaultValue = '1';
 siteVisitQuantity.defaultValue = '1';
@@ -95,6 +97,8 @@ submitButton.addEventListener('click', function () {
     +certifiedTotal.textContent +
     +closeoutTotal.textContent
   } Hours`;
+
+  printButton.disabled = false;
 });
 
 function createPDF() {
