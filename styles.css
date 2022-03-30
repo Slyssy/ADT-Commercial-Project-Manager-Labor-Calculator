@@ -31,7 +31,7 @@ body {
 }
 
 .logo {
-  height: 120px;
+  height: 200px;
 }
 
 .nav-list {
@@ -42,12 +42,17 @@ body {
 }
 
 .list-item {
-  font-size: 18px;
+  font-size: 22px;
 }
 
 .nav-list a {
   text-decoration: none;
   transition: 0.2s ease;
+}
+
+a:link,
+a:visited {
+  color: var(--green-blue-crayola);
 }
 
 .nav-list a:hover {
@@ -196,4 +201,52 @@ button:active {
   color: #ffc65c;
   font-size: 1.1em;
   margin-top: 1em;
+}
+
+@media all and (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .logo {
+    height: 140px;
+  }
+  .logo {
+    width: 100%;
+    position: absolute;
+    left: -60px;
+    top: 0px;
+  }
+
+  .menu {
+    display: block;
+    position: absolute;
+    right: 30px;
+    top: 50px;
+  }
+
+  .nav-list {
+    display: block;
+    list-style-type: none;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    display: none;
+  }
+
+  .list-item {
+    display: block;
+    border-top: 1px solid white;
+    padding: 20px 10px;
+    margin-top: 100px;
+  }
+
+  .title {
+    margin: 120px 20px 20px 20px;
+    font-size: 20px;
+  }
+}
+
+.active {
+  display: block;
 }

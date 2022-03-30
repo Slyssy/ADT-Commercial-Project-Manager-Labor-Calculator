@@ -57,6 +57,13 @@ const total = document.querySelector('.total');
 const submitButton = document.getElementById('submitButton');
 const printButton = document.getElementById('printButton');
 
+const menu = document.querySelector('.menu');
+const navList = document.querySelector('.nav-list');
+
+menu.addEventListener('click', function () {
+  navList.classList.toggle('active');
+});
+
 printButton.disabled = true;
 
 kickOffQuantity.defaultValue = '1';
@@ -155,10 +162,3 @@ function createPDF() {
 printButton.addEventListener('click', function () {
   createPDF();
 });
-
-// const menu = document.querySelector('.menu');
-// const navList = document.querySelector('.nav-list');
-
-// menu.addEventListener('click', function () {
-//   navList.classList.toggle('active');
-// });
