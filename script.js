@@ -163,3 +163,5 @@ function createPDF() {
 printButton.addEventListener('click', function () {
   createPDF();
 });
+
+console.log('Hello');
