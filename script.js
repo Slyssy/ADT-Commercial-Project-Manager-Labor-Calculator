@@ -57,11 +57,12 @@ const total = document.querySelector('.total');
 const submitButton = document.getElementById('submitButton');
 const printButton = document.getElementById('printButton');
 
-const menu = document.querySelector('.menu');
-const navList = document.querySelector('.nav-list');
+const toggleButton = document.querySelector('.toggle-button');
+const navbarLinks = document.querySelector('.navbar-links');
 
-menu.addEventListener('click', function () {
-  navList.classList.toggle('active');
+toggleButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  navbarLinks.classList.toggle('active');
 });
 
 printButton.disabled = true;
