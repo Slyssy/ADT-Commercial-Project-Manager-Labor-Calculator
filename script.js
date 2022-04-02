@@ -106,7 +106,7 @@ function createPDF() {
   printJS({
     printable: 'pm-labor-calculator',
     type: 'html',
-    css: 'styles2.css',
+    css: 'styles.css',
     header: 'Project Manager Labor',
   });
 }
