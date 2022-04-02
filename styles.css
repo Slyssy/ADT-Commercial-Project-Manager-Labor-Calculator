@@ -210,6 +210,9 @@ button:active {
   cursor: not-allowed;
 }
 
+.under-construction {
+  width: 100vw;
+}
 /* ! Start Mobile CSS Styling */
 @media (max-width: 700px) {
   .logo {
