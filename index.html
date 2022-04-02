@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PM Labor Calculator</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script>  
     <link rel="stylesheet" href="styles.css" />
+    
+    <script src="script.js" defer></script>
   </head>
   <body>
     <div class="container">
@@ -31,125 +31,167 @@
       </nav>
       
       <h2 class="title">Project Management Labor Calculator</h2>
-      <table id="table1">
-        <tr>
-          <th class="col-1">Project Manager Activity Description</th>
-          <th class="col-2">Hours</th>
-          <th class="col-3">QTY Needed</th>
-          <th class="col-4">Total Hours</th>
-        </tr>
-        <tr>
-          <td class="description">Kick Off Meeting</td>
-          <td class="values kick-off-hours">2</td>
-          <td class="values kick-off"><input type="text" class="kick-off-qty required"/></td>
-          <td class="values kick-off-total description"></td>
-        </tr>
-        <tr class="row-background">
-          <td class="description">Procurement</td>
-          <td class="values procurement-hours">1</td>
-          <td class="values procurement"><input type="text"
-          class="procurement-qty required"/></td>
-          <td class="values procurement-total description"></td>
-        </tr>
-        <tr>
-          <td class="description">Site Visit</td>
-          <td class="values site-visit-hours">1</td>
-          <td class="values site-visit"><input type="text" class="site-visit-qty
-          required"/></td>
-          <td class="values site-visit-total description"></td>
-        </tr>
-        <tr class="row-background">
-          <td class="description">
-            Coordination Meetings (If Require on construction project.) 2 Hrs
-            for each month of a project upon commencement. Include how many
-            months in the Qty Needed Column.
-          </td>
-          <td class="values coordination-meeting-hours">2</td>
-          <td class="values coordination-meeting"><input type="text" class="coordination-meeting-qty"/></td>
-          <td class="values coordination-meeting-total description"></td>
-        </tr>
-        <tr>
-          <td class="description">Travel</td>
-          <td class="values travel-hours">1</td>
-          <td class="values travel"><input type="text" class="travel-qty"/></td>
-          <td class="values travel-total description"></td>
-        </tr>
-        <tr class="row-background">
-          <td class="description">Ongoing Site Visits</td>
-          <td class="values ongoing-site-visit-hours">1</td>
-          <td class="values ongoing-site-visit"><input type="text" class="ongoing-site-visit-qty"/></td>
-          <td class="values ongoing-site-visit-total description"></td>
-        </tr>
-        <tr>
-          <td class="description">Material Lead Time Research</td>
-          <td class="values material-research-hours">1</td>
-          <td class="values material-research"><input type="text"
-          class="material-research-qty required"/></td>
-          <td class="values material-research-total description"></td>
-        </tr>
-        <tr class="row-background">
-          <td class="description">Fieldwire Implementation</td>
-          <td class="values fieldwire-hours">2</td>
-          <td class="values fieldwire"><input type="text" class="fieldwire-qty"/></td>
-          <td class="values fieldwire-total description"></td>
-        </tr>
-        <tr>
-          <td class="description">Gantt Chart Construction</td>
-          <td class="values gantt-chart-hours">1</td>
-          <td class="values gantt-chart"><input type="text" class="gantt-chart-qty"/></td>
-          <td class="values gantt-chart-total description"></td>
-        </tr>
-        <tr class="row-background">
-          <td class="description">
-            Customer (stakeholder) Update. 1 for every 40 hours.
-          </td>
-          <td class="values update-hours">1</td>
-          <td class="values "><input type="text" class="update-qty required"/></td>
-          <td class="values update-total description"></td>
-        </tr>
-        <tr>
-          <td class="description">
-            Quality Control: Three Visits Suggested. After Prewire, After Trim
-            Out, Before Turnover
-          </td>
-          <td class="values quality-control-hours">1</td>
-          <td class="values quality-control"><input type="text"
-          class="quality-control-qty required"/></td>
-          <td class="values quality-control-total description"></td>
-        </tr>
-        <tr class="row-background">
-          <td class="description">
-            Certified Payroll: 2 Hrs Each Month For Length of the Project After Commencement.
-          </td>
-          <td class="values certified-payroll-hours">1</td>
-          <td class="values certified-payroll"><input type="text" class="certified-payroll-qty"/></td>
-          <td class="values certified-payroll-total description"></td>
-        </tr>
-        </tr>
-          <td class="description">
-            Project Closeout/Financial Closeout
-          </td>
-          <td class="values closeout-hours">1</td>
-          <td class="values closeout"><input type="text" class="closeout-qty required"/></td>
-          <td class="values closeout-total description"></td>
-        </tr>
-        <tr>
-          <th class="col-1" colspan="3">Total</th>
-          <th class="col-4 total"></th>
-        </tr>
-      </table>
-      <div class="note">
-        <p>Cells that are highlighted orange are required. At a minimum, the
-        value of 1 should be entered in these cells.</p>
-      </div>
-      <div id="buttons">
-        <button id="submitButton">Calculate Totals</button>
-        <button id="printButton" class="disabled" disabled="disabled">Create PDF</button>
-      </div>
-      
-      
-    </div>
+      <div id="pm-labor-calculator">
+      <div class="table-container">
+        <h3 class="rowHeaderFooter header-column">
+          Project Manager Activity Description
+        </h3>
+        <h3 class="rowHeaderFooter">Hours</h3>
+        <h3 class="rowHeaderFooter">Qty</h3>
+        <h3 class="rowHeaderFooter">Total</h3>
 
-    <script src="script.js"></script>
+        <span class="row-odd header-column">Kick Off Meeting</span>
+        <span class="row-odd hours kickoff-hours">2</span>
+        <span class="row-odd"
+          ><input
+            type="text"
+            id="required"
+            class="row-odd kickoff-qty"
+            value="1"
+        /></span>
+        <span class="row-odd kickoff-total"></span>
+
+        <span class="row-even header-column">Procurement</span>
+        <span class="row-even hours procurement-hours">1</span>
+        <span class="row-even"
+          ><input
+            type="text"
+            id="required"
+            class="row-even procurement-qty"
+            value="1"
+        /></span>
+        <span class="row-even procurement-total"></span>
+
+        <span class="row-odd header-column">Site Visit</span>
+        <span class="row-odd hours site-visit-hours">1</span>
+        <span class="row-odd"
+          ><input
+            type="text"
+            id="required"
+            class="row-odd site-visit-qty"
+            value="1"
+        /></span>
+        <span class="row-odd site-visit-total"></span>
+
+        <span class="row-even header-column">
+          Coordination Meetings (If required on construction project.) 2 Hrs for
+          each month of a project upon commencement. Include how many months in
+          the QTY column.
+        </span>
+        <span class="row-even hours coordination-meeting-hours">2</span>
+        <span class="row-even"
+          ><input type="text" class="row-even coordination-meeting-qty"
+        /></span>
+        <span class="row-even coordination-meeting-total"></span>
+
+        <span class="row-odd header-column">Travel</span>
+        <span class="row-odd hours travel-hours">1</span>
+        <span class="row-odd"
+          ><input type="text" class="row-odd travel-qty"
+        /></span>
+        <span class="row-odd travel-total"></span>
+
+        <span class="row-even header-column">Ongoing Site Visits</span>
+        <span class="row-even hours ongoing-site-visit-hours">1</span>
+        <span class="row-even"
+          ><input type="text" class="row-even ongoing-site-visit-qty"
+        /></span>
+        <span class="row-even ongoing-site-visit-total"></span>
+
+        <span class="row-odd header-column">Material Lead Time Research</span>
+        <span class="row-odd hours material-research-hours">1</span>
+        <span class="row-odd"
+          ><input
+            type="text"
+            id="required"
+            class="row-odd material-research-qty"
+            value="1"
+        /></span>
+        <span class="row-odd material-research-total"></span>
+
+        <span class="row-even header-column">Fieldwire Implementation</span>
+        <span class="row-even hours fieldwire-hours">2</span>
+        <span class="row-even"
+          ><input type="text" class="row-even fieldwire-qty"
+        /></span>
+        <span class="row-even fieldwire-total"></span>
+
+        <span class="row-odd header-column">Gantt Chart Construction</span>
+        <span class="row-odd hours gantt-chart-hours">1</span>
+        <span class="row-odd"
+          ><input type="text" class="row-odd gantt-chart-qty"
+        /></span>
+        <span class="row-odd gantt-chart-total"></span>
+
+        <span class="row-even header-column"
+          >Customer Update. (1 hour for every 40 hours)</span
+        >
+        <span class="row-even hours update-hours">1</span>
+        <span class="row-even"
+          ><input
+            type="text"
+            id="required"
+            class="row-even update-qty"
+            value="1"
+        /></span>
+        <span class="row-even update-total"></span>
+
+        <span class="row-odd header-column">
+          Quality Control: Three Visits Suggested. After Prewire, After
+          Trim-Out, Before Turnover (1 hour per visit)
+        </span>
+        <span class="row-odd hours quality-control-hours">1</span>
+        <span class="row-odd"
+          ><input
+            type="text"
+            id="required"
+            class="row-odd quality-control-qty"
+            value="1"
+        /></span>
+        <span class="row-odd quality-control-total"></span>
+
+        <span class="row-even header-column">
+          Certified Payroll: (2 hours each month for the length of the project
+          after commencement)
+        </span>
+        <span class="row-even hours certified-payroll-hours">1</span>
+        <span class="row-even"
+          ><input type="text" class="row-even certified-payroll-qty"
+        /></span>
+        <span class="row-even certified-payroll-total"></span>
+
+        <span class="row-odd header-column"
+          >Project Closeout/Financial Closeout</span
+        >
+        <span class="row-odd hours closeout-hours">1</span>
+        <span class="row-odd"
+          ><input
+            type="text"
+            id="required"
+            class="row-odd closeout-qty"
+            value="1"
+        /></span>
+        <span class="row-odd closeout-total"></span>
+
+        <h3 class="rowHeaderFooter header-column total-el">TOTAL</h3>
+        <h3 class="rowHeaderFooter total"></h3>
+      </div>
+
+      <div class="note">
+        <p>
+          Cells that are highlighted orange are required. At a minimum, the
+          value of 1 should be entered in these cells.
+        </p>
+      </div>
+    </div>
+    <div id="buttons">
+      <button id="submitButton">Calculate Totals</button>
+      <button type="button" onClick='createPDF()' id="printButton" class="disabled" disabled="disabled">
+        Create PDF
+      </button>
+    </div>
+    <script src="
+    https://printjs-4de6.kxcdn.com/print.min.js"></script>
+    <script src="pm-labor-calculator"></script>
   </body>
 </html>

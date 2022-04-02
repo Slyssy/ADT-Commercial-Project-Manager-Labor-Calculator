@@ -1,6 +1,9 @@
-const kickOffHours = document.querySelector('.kick-off-hours').textContent;
-const kickOffQuantity = document.querySelector('.kick-off-qty');
-const kickOffTotal = document.querySelector('.kick-off-total');
+const toggleButton = document.querySelector('.toggle-button');
+const navbarLinks = document.querySelector('.navbar-links');
+
+const kickOffHours = document.querySelector('.kickoff-hours').textContent;
+const kickOffQuantity = document.querySelector('.kickoff-qty');
+const kickOffTotal = document.querySelector('.kickoff-total');
 const procurementHours =
   document.querySelector('.procurement-hours').textContent;
 const procurementQuantity = document.querySelector('.procurement-qty');
@@ -57,23 +60,13 @@ const total = document.querySelector('.total');
 const submitButton = document.getElementById('submitButton');
 const printButton = document.getElementById('printButton');
 
-const toggleButton = document.querySelector('.toggle-button');
-const navbarLinks = document.querySelector('.navbar-links');
-
 toggleButton.addEventListener('click', (e) => {
   e.preventDefault();
   navbarLinks.classList.toggle('active');
+  console.log('click');
 });
 
 printButton.disabled = true;
-
-kickOffQuantity.defaultValue = '1';
-procurementQuantity.defaultValue = '1';
-siteVisitQuantity.defaultValue = '1';
-materialQuantity.defaultValue = '1';
-updateQuantity.defaultValue = '1';
-qualityQuantity.defaultValue = '1';
-closeoutQuantity.defaultValue = '1';
 
 submitButton.addEventListener('click', function () {
   kickOffTotal.textContent = +kickOffHours * +kickOffQuantity.value;
@@ -110,58 +103,14 @@ submitButton.addEventListener('click', function () {
 });
 
 function createPDF() {
-  var doc = new jsPDF('p', 'pt', 'letter');
-  var htmlstring = '';
-  var tempVarToCheckPageHeight = 0;
-  var pageHeight = 0;
-  pageHeight = doc.internal.pageSize.height;
-  specialElementHandlers = {
-    // element with id of "bypass" - jQuery style selector
-    '#bypassme': function (element, renderer) {
-      // true = "handled elsewhere, bypass text extraction"
-      return true;
-    },
-  };
-  margins = {
-    top: 150,
-    bottom: 60,
-    left: 40,
-    right: 40,
-    width: 600,
-  };
-  var y = 20;
-  doc.setLineWidth(2);
-  doc.text(200, (y = y + 30), 'PM Labor Calculator');
-  doc.autoTable({
-    html: '#table1',
-    startY: 70,
-    theme: 'grid',
-    columnStyles: {
-      0: {
-        cellWidth: 360,
-      },
-      1: {
-        cellWidth: 45,
-        halign: 'center',
-      },
-      2: {
-        cellWidth: 45,
-        halign: 'center',
-      },
-      3: {
-        cellWidth: 45,
-        halign: 'center',
-      },
-    },
-    styles: {
-      minCellHeight: 40,
-    },
+  printJS({
+    printable: 'pm-labor-calculator',
+    type: 'html',
+    css: 'styles2.css',
+    header: 'Project Manager Labor',
   });
-  doc.save('PM_Labor_Calculator.pdf');
 }
 
-printButton.addEventListener('click', function () {
-  createPDF();
-});
-
-console.log('Hello');
+// printButton.addEventListener('click', function () {
+//   createPDF();
+// });
