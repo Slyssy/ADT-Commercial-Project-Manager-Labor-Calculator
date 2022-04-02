@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PM Labor Calculator</title>
-    <link rel="stylesheet" href="styles2.css" />
-    <script src="script2.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
+    
+    <script src="script.js" defer></script>
   </head>
   <body>
     <div class="container">
@@ -28,8 +29,9 @@
           </ul>
         </div>
       </nav>
-
+      
       <h2 class="title">Project Management Labor Calculator</h2>
+      <div id="pm-labor-calculator">
       <div class="table-container">
         <h3 class="rowHeaderFooter header-column">
           Project Manager Activity Description
@@ -172,20 +174,24 @@
         <span class="row-odd closeout-total"></span>
 
         <h3 class="rowHeaderFooter header-column total-el">TOTAL</h3>
-        <h3 class="rowHeaderFooter"></h3>
+        <h3 class="rowHeaderFooter total"></h3>
       </div>
-    </div>
-    <div class="note">
-      <p>
-        Cells that are highlighted orange are required. At a minimum, the value
-        of 1 should be entered in these cells.
-      </p>
+
+      <div class="note">
+        <p>
+          Cells that are highlighted orange are required. At a minimum, the
+          value of 1 should be entered in these cells.
+        </p>
+      </div>
     </div>
     <div id="buttons">
       <button id="submitButton">Calculate Totals</button>
-      <button id="printButton" class="disabled" disabled="disabled">
+      <button type="button" onClick='createPDF()' id="printButton" class="disabled" disabled="disabled">
         Create PDF
       </button>
     </div>
+    <script src="
+    https://printjs-4de6.kxcdn.com/print.min.js"></script>
+    <script src="pm-labor-calculator"></script>
   </body>
 </html>
