@@ -1,0 +1,160 @@
+:root {
+  --white: #fcfdfeff;
+  --green-blue-crayola: #3588c4ff;
+  --french-blue: #1076bcff;
+  --alice-blue: #e2ecf5ff;
+  --beau-blue: #c9ddeeff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-links ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-links li {
+  list-style: none;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: var(--french-blue);
+  font-size: 1.3rem;
+  padding: 1rem;
+  display: block;
+}
+
+.navbar-links li a:hover {
+  font-size: 1.5rem;
+  color: #ffc65c;
+}
+
+.toggle-button {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-button .bar {
+  height: 2px;
+  width: 100%;
+  background-color: var(--french-blue);
+  border-radius: 10px;
+}
+.title {
+  margin: 1.3em;
+}
+
+.title {
+  color: darkslategrey;
+  font-size: 2em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 4em;
+  background-color: var(--french-blue);
+  color: var(--white);
+  padding: .5em 1em;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 4em;
+  padding: .5em 1em;
+}
+
+.col-1 {
+  flex-grow: 4;
+}
+
+.col-2 {
+  flex-grow: 1;
+}
+
+.col-3 {
+  flex-grow: 1;
+}
+
+.col-4 {
+  flex-grow: 1;
+}
+
+/* ! Start Mobile CSS Styling */
+@media (max-width: 800px) {
+  .logo {
+    width: 80%;
+    padding: 0.4rem 0;
+  }
+
+  .toggle-button {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: none;
+    width: 100%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links ul {
+    width: 100%;
+    margin: auto;
+    flex-direction: column;
+  }
+
+  .navbar-links li {
+    text-align: center;
+  }
+  .navbar-links li a {
+    padding: 0.7rem 1rem;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .title {
+    font-size: 1.2em;
+  }
+
+  h3 {
+    font-size: 0.8em;
+  }
+

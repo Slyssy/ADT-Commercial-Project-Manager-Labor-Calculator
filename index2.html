@@ -29,8 +29,206 @@
       </nav>
       
       <h2 class="title">Project Management Labor Calculator</h2>
-      
-
+      <div id="table">
+        <div class="col-1">
+          <div class="header-row">
+            <h3>PM Activity Description</h3>
+          </div>
+          <div class="header-row-left">
+            <h4>Kick Off Meeting</h4>
+          </div>
+          <div class="header-row-left">
+            <h4>Procurement</h4>
+          </div>
+          <div class="header-row-left">
+            <h4>Site Visit</h4>
+          </div>
+          <div class="header-row-left">
+            <h4>Coordination Meetings (If required on construction project): 2
+            Hrs for each month of a project upon commencement. Include how many
+            months in the QTY column.</h4>
+          </div>
+          <div class="header-row-left">
+            <h4>Travel</h4>
+          </div>
+          <div class="header-row-left">
+            <h4>Ongoing Site Visits</h4>
+          </div>
+          <div class="header-row-left">
+            <h4>Material Lead Time Research</h4>
+          </div>
+          <div class="header-row-left">
+            <h4>Fieldwire Implementation</h4>
+          </div>
+          <div class="header-row-left">
+            <h4>Gantt Chart Construction</h4>
+          </div>
+          <div class="header-row-left">
+            <h4>Customer (stakeholder) Update: 1 for every 40 hours.</h4>
+          </div>
+          <div class="header-row-left">
+            <h4>Quality Control: Three visits suggested (After Prewire, After
+              Trim-Out, Before Turnover).</h4>
+            </div>
+            <div class="header-row-left">
+              <h4>Certified Payroll: 2 hours each month for the length of the
+            project after commencement.</h4>
+          </div>
+          <div class="header-row-left">
+            <h4>Project Closeout/Financial Closeout</h4>
+          </div>
+          <div class="header-row">
+            <h3></h3>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="header-row">
+            <h3>Hours</h3>
+          </div>
+          <div class="row">
+            <h4>2</h4>
+          </div>
+          <div class="row">
+            <h4>1</h4>
+          </div>
+          <div class="row">
+            <h4>1</h4>
+          </div>
+          <div class="row">
+            <h4>2</h4>
+          </div>
+          <div class="row">
+            <h4>1</h4>
+          </div>
+          <div class="row">
+            <h4>1</h4>
+          </div>
+          <div class="row">
+            <h4>1</h4>
+          </div>
+          <div class="row">
+            <h4>2</h4>
+          </div>
+          <div class="row">
+            <h4>1</h4>
+          </div>
+          <div class="row">
+            <h4>1</h4>
+          </div>
+          <div class="row">
+            <h4>1</h4>
+          </div>
+          <div class="row">
+            <h4>1</h4>
+          </div>
+          <div class="row">
+            <h4>1</h4>
+          </div>
+          <div class="header-row">
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="header-row">
+            <h3>QTY</h3>
+          </div>
+          <form action="submit">
+            <input type="text" class="kick-off-qty required">
+          </form>
+          <form action="submit">
+            <input type="text" class="kick-off-qty required">
+          </form>
+          <form action="submit">
+            <input type="text" class="kick-off-qty required">
+          </form>
+          <form action="submit">
+            <input type="text" class="kick-off-qty">
+          </form>
+          <form action="submit">
+            <input type="text" class="kick-off-qty">
+          </form>
+          <form action="submit">
+            <input type="text" class="kick-off-qty">
+          </form>
+          <form action="submit">
+            <input type="text" class="kick-off-qty required">
+          </form>
+          <form action="submit">
+            <input type="text" class="kick-off-qty">
+          </form>
+          <form action="submit">
+            <input type="text" class="kick-off-qty">
+          </form>
+          <form action="submit">
+            <input type="text" class="kick-off-qty required">
+          </form>
+          <form action="submit">
+            <input type="text" class="kick-off-qty required">
+          </form>
+          <form action="submit">
+            <input type="text" class="kick-off-qty">
+          </form>
+          <form action="submit">
+            <input type="text" class="kick-off-qty required">
+          </form>
+          <div class="header-row">
+            <h3>Total</h3>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="header-row">
+            <h3>Total</h3>
+          </div>
+          <div class="row">
+            <h4></h4>
+          </div>
+          <div class="row">
+            <h4></h4>
+          </div>
+          <div class="row">
+            <h4></h4>
+          </div>
+          <div class="row">
+            <h4></h4>
+          </div>
+          <div class="row">
+            <h4></h4>
+          </div>
+          <div class="row">
+            <h4></h4>
+          </div>
+          <div class="row">
+            <h4></h4>
+          </div>
+          <div class="row">
+            <h4></h4>
+          </div>
+          <div class="row">
+            <h4></h4>
+          </div>
+          <div class="row">
+            <h4></h4>
+          </div>
+          <div class="row">
+            <h4></h4>
+          </div>
+          <div class="row">
+            <h4></h4>
+          </div>
+          <div class="row">
+            <h4></h4>
+          </div>
+          <div class="header-row total-value">
+          </div>
+        </div>
+      </div>
+      <div class="note">
+        <p>Cells that are highlighted orange are required. At a minimum, the
+          value of 1 should be entered in these cells.</p>
+        </div>
+        <div id="buttons">
+          <button id="submitButton">Calculate Totals</button>
+        <button id="printButton" class="disabled" disabled="disabled">Create PDF</button>
+      </div>
     <script src="script2.js"></script>
   </body>
 </html>
